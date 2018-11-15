@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CV } from 'src/app/class/cv';
-
-import { Observable } from 'rxjs';
+import { CvService } from 'src/app/services/cv.service'
 
 @Component({
   selector: 'app-cvs',
@@ -10,24 +8,15 @@ import { Observable } from 'rxjs';
   styleUrls: ['./cvs.component.css']
 })
 export class CvsComponent implements OnInit {
-  cv: Observable<CV[]>;
-  private baseUrl = 'http://localhost/WebProject/public/index.php/api/cvs';
+  cvs: CV;
 
-  constructor(private http: HttpClient) { }
+  constructor(private CvService: CvService) { }
 
   ngOnInit() : void {
-    this.getFirstname();
+    this.getCvs();
   }
-  getServiceFirstname():Observable<any> {
-    return this.http.get(this.baseUrl);
+  getCvs() {
+    this.CvService.getCvs()
+        .subscribe(data => { this.cvs = data;});
   }
-  getFirstname() {
-    this.getServiceFirstname().subscribe(
-      data => {
-        this.cv = data;
-        console.log(this.cv);
-      }
-    );
-  }
-
 }

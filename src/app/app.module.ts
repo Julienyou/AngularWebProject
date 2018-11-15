@@ -7,12 +7,16 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CvsComponent } from './components/cvs/cvs.component';
+import { JobsComponent } from './components/jobs/jobs.component';
+import { CvformComponent } from './components/cvform/cvform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    CvsComponent
+    CvsComponent,
+    JobsComponent,
+    CvformComponent
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,66 @@
 <p>Si votre métier n'est pas présent dans la liste des métiers, veuillez le rajouter: <br></p>
-<a class="btn btn-outline-primary" href="{{ path('addjob') }}">Ajouter un métier</a>
+<a class="btn btn-outline-primary">Ajouter un métier</a>
 
-<!-- <div class="form-group">
-  <label for="lastname">Lastname</label>
-  <input type="text" class="form-control" id="lastname"
-         required
-         [(ngModel)]="cv.lastname" name="lastname">
-</div>
-<div class="form-group">
-  <label for="firstname">Firstname</label>
-  <input type="text" class="form-control" id="firstname"
-         required
-         [(ngModel)]="cv.firstname" name="firstname">
-</div> -->
+<form style="width: 50%; padding:5px" (ngSubmit)="onSubmit()" *ngIf="cv">
+  <div class="form-group">
+    <label for="lastname">Nom</label>
+    <input type="text" class="form-control" id="lastname" [(ngModel)]="cv.lastname" name="lastname">
+  </div>
+  <div class="form-group">
+    <label for="firstname">Prénom</label>
+    <input type="text" class="form-control" id="firstname"
+            [(ngModel)]="cv.firstname" name="firstname">
+  </div>
+  <div class="form-group">
+    <label for="motivation">Motivation</label>
+    <input type="text" class="form-control" id="motivation"
+            [(ngModel)]="cv.motivation" name="motivation">
+  </div>
+  <div class="form-group">
+    <label for="skills">Compétences</label>
+    <input type="text" class="form-control" id="skills"
+            [(ngModel)]="cv.skills" name="skills">
+  </div>
+  <div class="form-group">
+    <label for="studies">Expériences/Etudes</label>
+    <input type="text" class="form-control" id="studies"
+            [(ngModel)]="cv.studies" name="studies">
+  </div>
+  <div class="form-group">
+    <label for="birthday">Date de naissance (jj/mm/aaaa)</label>
+    <input type="text" class="form-control" id="birthday"
+            [(ngModel)]="cv.birthday" name="birthday">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email"
+            [(ngModel)]="cv.email" name="email">
+  </div>
+  <div class="form-group">
+    <label for="city">Ville</label>
+    <input type="text" class="form-control" id="city"
+            [(ngModel)]="cv.city" name="city">
+  </div>
+  <div class="form-group">
+    <label for="country">Pays</label>
+    <input type="text" class="form-control" id="country"
+            [(ngModel)]="cv.country" name="country">
+  </div>
+  <div class="form-group">
+    <label for="phone_number">Numéro de téléphone</label>
+    <input type="text" class="form-control" id="phone_number"
+            [(ngModel)]="cv.phone_number" name="phone_number">
+  </div>
+  <div class="form-group" *ngIf="jobs">
+    <label for="id_job">Job</label>
+    <select class="form-control" [(ngModel)]="cv.job" name="id_job">
+        <option *ngFor="let job of jobs" [ngValue]="job.id">{{ job.job }}</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-outline-primary">Créer mon CV</button>
+</form>
 
-<div class="formContainer"> <br>
+<!-- <div class="formContainer"> <br>
     {{ form_start(form) }}
     {{ form_row(form.lastname) }}
     {{ form_row(form.firstname) }}
@@ -29,4 +75,4 @@
     {{ form_row(form.job) }}
     {{ form_row(form.save) }}
     {{ form_end(form) }}
-</div>
+</div> -->

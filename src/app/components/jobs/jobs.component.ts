@@ -8,7 +8,7 @@ import { Job } from 'src/app/class/job';
   styleUrls: ['./jobs.component.css']
 })
 export class JobsComponent implements OnInit {
-  jobs: Job;
+  jobs: Job[];
 
   constructor(private JobService: JobService) { }
 

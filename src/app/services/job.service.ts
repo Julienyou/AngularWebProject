@@ -12,7 +12,7 @@ export class JobService {
 
   private baseUrl = 'http://localhost/WebProject/public/index.php/api';
   
-  getJobs(): Observable<Job> {
-    return this.http.get<Job>(this.baseUrl + "/jobs");
+  getJobs(): Observable<Job[]> {
+    return this.http.get<Job[]>(this.baseUrl + "/jobs");
   }
 }

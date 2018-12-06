@@ -16,6 +16,9 @@ export class CvService {
   getCvs(): Observable<CV> {
     return this.http.get<CV>(this.baseUrl + "/cvs");
   }
+  getCv(id:number) {
+    return this.http.get<CV>(this.baseUrl + "/cv/" + id);
+  }
   addCvs(cv:CV) {
     return this.http.post<CV>(this.baseUrl + "/addcv", 
     {
@@ -23,6 +26,23 @@ export class CvService {
       "skills": cv.skills,
       "studies":cv.studies,
       "id_job": cv.job,
+      "lastname":cv.lastname,
+      "firstname":cv.firstname,
+      "birthday": cv.birthday,
+      "email": cv.email,
+      "city": cv.city,
+      "country": cv.country,
+      "phone_Number":cv.phone_number,
+      "phoneNumber":cv.phone_number
+      })
+  }
+  updateCv(cv:CV, id: string) {
+    return this.http.put<CV>(this.baseUrl + "/updatecv/" +  id, 
+    {
+      "motivation": cv.motivation,
+      "skills": cv.skills,
+      "studies":cv.studies,
+      "id_job": cv.job.id,
       "lastname":cv.lastname,
       "firstname":cv.firstname,
       "birthday": cv.birthday,

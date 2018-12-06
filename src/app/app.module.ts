@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CvsComponent } from './components/cvs/cvs.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { CvformComponent } from './components/cvform/cvform.component';
+import { CvUpdateComponent } from './components/cv-update/cv-update.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CvformComponent } from './components/cvform/cvform.component';
     NavigationComponent,
     CvsComponent,
     JobsComponent,
-    CvformComponent
+    CvformComponent,
+    CvUpdateComponent
   ],
   imports: [
     BrowserModule,

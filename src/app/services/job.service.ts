@@ -15,4 +15,8 @@ export class JobService {
   getJobs(): Observable<Job[]> {
     return this.http.get<Job[]>(this.baseUrl + "/jobs");
   }
+  addJob(job) {
+    return this.http.post<any>(this.baseUrl + "/addjob",
+    {"job": job});
+  }
 }

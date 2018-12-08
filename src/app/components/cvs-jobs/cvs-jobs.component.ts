@@ -23,5 +23,8 @@ export class CvsJobsComponent implements OnInit {
     this.CvService.getCvsJobs(this.id)
         .subscribe(data => { this.cvs = data;})
   }
-
+  delete(id){
+    this.CvService.deleteCv(id)
+        .subscribe()
+  }
 }

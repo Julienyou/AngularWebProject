@@ -5,6 +5,7 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { CvformComponent } from './components/cvform/cvform.component';
 import { CvUpdateComponent } from './components/cv-update/cv-update.component';
 import { CvsJobsComponent } from './components/cvs-jobs/cvs-jobs.component';
+import { AddjobComponent } from './components/addjob/addjob.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'cvs', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'jobs', component: JobsComponent},
   {path: 'addcv', component: CvformComponent},
   {path: 'updatecv/:id', component:CvUpdateComponent},
-  {path: 'cvs/:id', component:CvsJobsComponent}
+  {path: 'cvs/:id', component:CvsJobsComponent},
+  {path: 'addjob', component: AddjobComponent}
 ];
 
 @NgModule({

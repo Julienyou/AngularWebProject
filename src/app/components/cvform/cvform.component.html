@@ -1,5 +1,5 @@
 <p>Si votre métier n'est pas présent dans la liste des métiers, veuillez le rajouter: <br></p>
-<a class="btn btn-outline-primary">Ajouter un métier</a>
+<a class="btn btn-outline-primary" [routerLink]="['/addjob']">Ajouter un métier</a>
 
 <form style="width: 50%; padding:5px" (ngSubmit)="onSubmit()" *ngIf="cv">
   <div class="form-group">

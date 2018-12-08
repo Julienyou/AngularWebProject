@@ -1,0 +1,8 @@
+<form style="width: 50%; padding:5px" (ngSubmit)="onSubmit()">
+  <p>Entrez le nom du métier à ajouter</p>
+  <div class="form-group">
+    <label for="job">Nom</label>
+    <input type="text" class="form-control" id="job" [(ngModel)]="job" name="job">
+  </div>
+  <button type="submit" class="btn btn-outline-primary">Ajouter le métier</button>
+</form>

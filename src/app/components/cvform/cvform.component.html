@@ -52,7 +52,7 @@
             [(ngModel)]="cv.phone_number" name="phone_number">
   </div>
   <div class="form-group" *ngIf="jobs">
-    <label for="id_job">Job</label>
+   <label for="id_job">Job</label>
     <select class="form-control" [(ngModel)]="cv.job" name="id_job">
         <option *ngFor="let job of jobs" [ngValue]="job.id">{{ job.job }}</option>
     </select>

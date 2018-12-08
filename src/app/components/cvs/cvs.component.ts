@@ -19,6 +19,9 @@ export class CvsComponent implements OnInit {
   getCvs() {
     this.CvService.getCvs()
         .subscribe(data => { this.cvs = data;});
-    this.router.navigate(['/cvs']);
+  }
+  delete(id){
+    this.CvService.deleteCv(id)
+        .subscribe()
   }
 }

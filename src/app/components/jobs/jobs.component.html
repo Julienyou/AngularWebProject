@@ -4,6 +4,6 @@
 
     <div *ngFor="let job of jobs">
       <div id="job">
-        <a class="btn btn-outline-primary" href="">{{job.job}}</a>
+        <a class="btn btn-outline-primary"[routerLink]="['/cvs', job.id]">{{job.job}}</a>
       </div>
     </div>

@@ -19,6 +19,12 @@ export class CvService {
   getCv(id:number) {
     return this.http.get<CV>(this.baseUrl + "/cv/" + id);
   }
+  getCvsJobs(id:number) {
+    return this.http.get<CV>(this.baseUrl + "/cvs/" + id);
+  }
+  deleteCv(id:number) {
+    return this.http.delete<CV>(this.baseUrl + "/deletecv/" + id);
+  }
   addCvs(cv:CV) {
     return this.http.post<CV>(this.baseUrl + "/addcv", 
     {

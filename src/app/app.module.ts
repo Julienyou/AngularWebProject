@@ -11,6 +11,7 @@ import { CvsComponent } from './components/cvs/cvs.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { CvformComponent } from './components/cvform/cvform.component';
 import { CvUpdateComponent } from './components/cv-update/cv-update.component';
+import { CvsJobsComponent } from './components/cvs-jobs/cvs-jobs.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CvUpdateComponent } from './components/cv-update/cv-update.component';
     CvsComponent,
     JobsComponent,
     CvformComponent,
-    CvUpdateComponent
+    CvUpdateComponent,
+    CvsJobsComponent
   ],
   imports: [
     BrowserModule,

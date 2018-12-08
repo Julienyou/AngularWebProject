@@ -36,6 +36,4 @@ export class CvUpdateComponent implements OnInit {
         .subscribe()
     this.router.navigate(['/cvs']);
   }
-
-
 }

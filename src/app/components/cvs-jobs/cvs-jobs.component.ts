@@ -9,7 +9,7 @@ import { ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./cvs-jobs.component.css']
 })
 export class CvsJobsComponent implements OnInit {
-  cvs: CV;
+  cvs: CV[];
   id;
 
   constructor(private CvService:CvService, private route:ActivatedRoute,

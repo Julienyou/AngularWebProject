@@ -13,19 +13,19 @@ export class CvService {
 
   private baseUrl = 'http://localhost/WebProject/public/index.php/api';
   
-  getCvs(): Observable<CV> {
-    return this.http.get<CV>(this.baseUrl + "/cvs");
+  getCvs(): Observable<CV[]> {
+    return this.http.get<CV[]>(this.baseUrl + "/cvs");
   }
   getCv(id:number) {
     return this.http.get<CV>(this.baseUrl + "/cv/" + id);
   }
   getCvsJobs(id:number) {
-    return this.http.get<CV>(this.baseUrl + "/cvs/" + id);
+    return this.http.get<CV[]>(this.baseUrl + "/cvs/" + id);
   }
   deleteCv(id:number) {
     return this.http.delete<CV>(this.baseUrl + "/deletecv/" + id);
   }
-  addCvs(cv:CV) {
+  addCv(cv:CV) {
     return this.http.post<CV>(this.baseUrl + "/addcv", 
     {
       "motivation": cv.motivation,

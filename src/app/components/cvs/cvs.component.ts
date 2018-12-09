@@ -9,7 +9,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./cvs.component.css']
 })
 export class CvsComponent implements OnInit {
-  cvs: CV;
+  cvs: CV[];
 
   constructor(private CvService: CvService, private router:Router) { }
 
@@ -23,5 +23,14 @@ export class CvsComponent implements OnInit {
   delete(id){
     this.CvService.deleteCv(id)
         .subscribe()
+    
+    let i=0;
+    for (i; i<this.cvs.length; i++) {
+      if (this.cvs[i].id == id) {
+        this.cvs.splice(i, 1);
+      }
+    }
+
+    this.router.navigate(['/cvs']);
   }
 }

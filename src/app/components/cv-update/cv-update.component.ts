@@ -34,6 +34,7 @@ export class CvUpdateComponent implements OnInit {
   onSubmit(){
     this.CvService.updateCv(this.cv, this.id)
         .subscribe()
+        
     this.router.navigate(['/cvs']);
   }
 }

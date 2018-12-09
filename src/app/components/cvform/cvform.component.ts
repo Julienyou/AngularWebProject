@@ -25,7 +25,7 @@ export class CvformComponent implements OnInit {
         .subscribe(data => { this.jobs = data;})
   }
   onSubmit(){
-    this.CvService.addCvs(this.cv)
+    this.CvService.addCv(this.cv)
         .subscribe()    
     this.router.navigate(['/cvs']);
   }

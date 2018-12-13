@@ -26,7 +26,7 @@ export class CvService {
     return this.http.delete<CV>(this.baseUrl + "/deletecv/" + id);
   }
   addCv(cv:CV) {
-    return this.http.post<CV>(this.baseUrl + "/addcv", 
+    return this.http.post<any>(this.baseUrl + "/addcv", 
     {
       "motivation": cv.motivation,
       "skills": cv.skills,

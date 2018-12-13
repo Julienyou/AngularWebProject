@@ -13,6 +13,8 @@ import { Router} from '@angular/router';
 export class CvformComponent implements OnInit {
   jobs : Job[];
   cv : CV = new CV();
+  errorMessage : string;
+  responseError : any;
 
   constructor(private JobService:JobService, private CvService:CvService,
               private router:Router) {}
@@ -26,7 +28,21 @@ export class CvformComponent implements OnInit {
   }
   onSubmit(){
     this.CvService.addCv(this.cv)
-        .subscribe()    
-    this.router.navigate(['/cvs']);
+        .subscribe(data => {this.router.navigate(['/cvs']);},
+        err => {
+            this.responseError = err["error"];
+            var key;
+            this.errorMessage = "";
+            if (Object.keys(this.responseError).indexOf("isTrusted") == -1) {         
+              for(key in this.responseError) {
+                  this.errorMessage += key + " : " + this.responseError[key] + "<br>";
+              }
+            } else {
+              this.errorMessage += "Veuillez remplir tous les champs"
+            }
+            
+            this.router.navigate(['/addcv']);
+            },
+        () => console.log(this.responseError));
   }
 }

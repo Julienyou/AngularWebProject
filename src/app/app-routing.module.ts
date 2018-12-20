@@ -7,6 +7,8 @@ import { CvUpdateComponent } from './components/cv-update/cv-update.component';
 import { CvsJobsComponent } from './components/cvs-jobs/cvs-jobs.component';
 import { AddjobComponent } from './components/addjob/addjob.component';
 
+/* Link a route to a component to know thanks to the url what we have
+   to put in the router-outlet in the main html (app.component.html) */
 const routes: Routes = [
   {path: '', redirectTo: 'cvs', pathMatch: 'full'},
   {path: 'cvs', component: CvsComponent },

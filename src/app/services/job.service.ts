@@ -16,6 +16,7 @@ export class JobService {
     return this.http.get<Job[]>(this.baseUrl + "/jobs");
   }
   addJob(job) {
+    /* Send a POST request to the API for adding a particular job thanks to the formed json */
     return this.http.post<any>(this.baseUrl + "/addjob",
     {"job": job});
   }

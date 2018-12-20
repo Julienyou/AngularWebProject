@@ -26,6 +26,7 @@ export class CvService {
     return this.http.delete<CV>(this.baseUrl + "/deletecv/" + id);
   }
   addCv(cv:CV) {
+    /* Send a POST request to the API for creating a cv thanks to the formed json */
     return this.http.post<any>(this.baseUrl + "/addcv", 
     {
       "motivation": cv.motivation,
@@ -43,6 +44,7 @@ export class CvService {
       })
   }
   updateCv(cv:CV, id: string) {
+    /* Send a PUT request to the API for updating a particular cv thanks to the formed json */
     return this.http.put<CV>(this.baseUrl + "/updatecv/" +  id, 
     {
       "motivation": cv.motivation,

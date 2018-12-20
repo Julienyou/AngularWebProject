@@ -27,6 +27,10 @@ export class CvformComponent implements OnInit {
         .subscribe(data => { this.jobs = data;})
   }
   onSubmit(){
+    /* If the data send to the API are :
+       valid : redirect the user to /cvs
+       wrong : manipulate the response to display the name of the field
+               and the error of this field in a flash message (errorMessage) */
     this.CvService.addCv(this.cv)
         .subscribe(data => {this.router.navigate(['/cvs']);},
         err => {

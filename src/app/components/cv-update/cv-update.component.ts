@@ -34,6 +34,10 @@ export class CvUpdateComponent implements OnInit {
         .subscribe(data => { this.cv = data;})
   }
   onSubmit(){
+    /* If the data send to the API are :
+       valid : redirect the user to /cvs
+       wrong : manipulate the response to display the name of the field
+               and the error of this field in a flash message (errorMessage)*/
     this.CvService.updateCv(this.cv, this.id)
         .subscribe(data => {this.router.navigate(['/cvs']);},
         err => {

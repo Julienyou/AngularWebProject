@@ -24,7 +24,17 @@ export class CvsJobsComponent implements OnInit {
         .subscribe(data => { this.cvs = data;})
   }
   delete(id){
+    /* Delete a cv and remove it from the array cvs */
     this.CvService.deleteCv(id)
         .subscribe()
+
+    let i=0;
+    for (i; i<this.cvs.length; i++) {
+      if (this.cvs[i].id == id) {
+        this.cvs.splice(i, 1);
+      }
+    }
+
+    this.router.navigate(['/cvs', id]);
   }
 }

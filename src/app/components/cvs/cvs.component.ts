@@ -21,6 +21,7 @@ export class CvsComponent implements OnInit {
         .subscribe(data => { this.cvs = data;});
   }
   delete(id){
+    /* Delete a cv and remove it from the array cvs */
     this.CvService.deleteCv(id)
         .subscribe()
     
